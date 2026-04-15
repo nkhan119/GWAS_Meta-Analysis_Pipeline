@@ -1,0 +1,34 @@
+# Nextflow work directory
+work/
+.nextflow/
+.nextflow.log*
+
+# Results (large files)
+results/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# R
+.Rhistory
+.RData
+
+# Docker
+*.tar
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+work/
+results/
+.nextflow/
+.nextflow.log*

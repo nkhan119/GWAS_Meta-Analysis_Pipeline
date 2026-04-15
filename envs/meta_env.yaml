@@ -1,0 +1,32 @@
+name: cdc_meta
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.11
+  - r-base=4.3
+  - r-tidyverse
+  - r-data.table
+  - r-r.utils
+  - r-metafor
+  - r-meta
+  - r-optparse
+  - r-jsonlite
+  - r-glue
+  - r-remotes
+  - plink2
+  - pip
+  - pip:
+    - numpy>=1.24
+    - pandas>=2.0
+    - scipy>=1.11
+    - statsmodels>=0.14
+    - plotly>=5.18
+    - kaleido>=0.2.1
+    - matplotlib>=3.8
+    - seaborn>=0.13
+    - pyranges>=0.0.129
+    - tqdm>=4.66
+    - pyyaml>=6.0
+    - click>=8.1
