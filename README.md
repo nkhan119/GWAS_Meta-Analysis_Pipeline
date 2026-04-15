@@ -67,17 +67,13 @@ nextflow run main.nf \
 ### 3. Run on Narval (Singularity + SLURM)
 
 ```bash
-# On Narval login node — Singularity pulls from Docker Hub automatically
 nextflow run main.nf \
-    -profile narval \
-    --base_dir   ~/projects/def-fveyrier/1000G \
-    --sumstats_dir ~/projects/def-fveyrier/1000G/GWAS_analysis \
-    --out_dir    ~/projects/def-fveyrier/1000G/META_results \
+    -profile slurm \
+    --base_dir   ~/projects/1000G \
+    --sumstats_dir ~/projects/1000G/GWAS_analysis \
+    --out_dir    ~/projects/1000G/META_results \
     -resume
 ```
-
-> The `narval` profile uses `--account=def-fveyrier_cpu` and Singularity
-> auto-pull from `docker://nkhan119/gwas-meta:1.0.0`.
 
 ### 4. Skip validation (if sumstats are already clean)
 
@@ -96,18 +92,18 @@ nextflow run main.nf \
 
 ```
 results/
-  Meta_Report.html              ← interactive HTML report
+  Meta_Report.html
   meta/{trait}/
-    {trait}_meta_results.tsv.gz ← full meta-analysis results
-    {trait}_het_stats.tsv.gz    ← Cochran Q + I² per SNP
-    {trait}_qq_data.tsv.gz      ← QQ plot data (subsampled)
-    {trait}_meta_summary.tsv    ← per-trait summary stats
+    {trait}_meta_results.tsv.gz
+    {trait}_het_stats.tsv.gz
+    {trait}_qq_data.tsv.gz
+    {trait}_meta_summary.tsv
   filtered/{trait}/
-    {trait}_top_loci.tsv        ← independent lead SNPs (clumped)
+    {trait}_top_loci.tsv
     {trait}_filter_summary.tsv
     {trait}_high_het_loci.tsv
   annotated/{trait}/
-    {trait}_annotated_loci.tsv  ← loci + nearest gene + consequence
+    {trait}_annotated_loci.tsv
   figures/
     {trait}_manhattan.png
     {trait}_qqplot.png
@@ -176,7 +172,7 @@ All bundled in the Docker image (`nkhan119/gwas-meta:1.0.0`):
 
 ## Citation
 
-> Khan N. (2025). CDC 1.0.0 — Causal Deep Consensus GWAS Meta-Analysis Pipeline.
+> Khan N. (2026). CDC 1.0.0 — Causal Deep Consensus GWAS Meta-Analysis Pipeline.
 > INRS-Centre Armand-Frappier Santé-Biotechnologie.
 > https://github.com/nkhan119
 
